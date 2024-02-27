@@ -24,7 +24,7 @@ public class Tank : MonoBehaviour
     void Update()
     {
         Vector3 movement = this.transform.position;
-        movement = Vector3.forward * speed * verticalMovement.action.ReadValue<float>() * Time.deltaTime;
+        movement += Vector3.forward * speed * verticalMovement.action.ReadValue<float>() * Time.deltaTime;
         rb.MovePosition(movement);
     }
 }
