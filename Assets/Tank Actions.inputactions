@@ -1,0 +1,67 @@
+{
+    "name": "Tank Actions",
+    "maps": [
+        {
+            "name": "Default",
+            "id": "23c667bc-64df-4e64-b5a3-90955ed67b0c",
+            "actions": [
+                {
+                    "name": "Vertical Action",
+                    "type": "Button",
+                    "id": "c414f7a1-78bc-4fb2-a090-758b7401d387",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2b8fb073-a0ba-4acb-9798-ce63f4144178",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Vertical Action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "08ed957c-7a46-4767-a999-f881f22d0e7e",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Vertical Action",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "f8edb1d5-7886-4726-8b83-ca9f6a2e8f1e",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Vertical Action",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "b921c761-b02e-457e-acb9-4388e634de7b",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Vertical Action",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
