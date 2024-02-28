@@ -508,6 +508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 100
   verticalMovement: {fileID: -1822573157380670274, guid: 50263a2e129fc4e1fb69a41d959a7f15, type: 3}
+  rotationMovement: {fileID: 3379107773071744333, guid: 50263a2e129fc4e1fb69a41d959a7f15, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
