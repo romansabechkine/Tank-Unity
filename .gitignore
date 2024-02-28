@@ -35,11 +35,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-Logs/
+/Logs/
 ProjectSettings/SceneTemplateSettings.json
 UserSettings/Layouts/
-/Logs/AssetImportWorker0.log
-/Logs/AssetImportWorker1.log
 /Packages
 /UserSettings
-Logs/shadercompiler-UnityShaderCompiler0.log
