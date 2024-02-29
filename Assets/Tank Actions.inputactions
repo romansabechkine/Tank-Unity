@@ -130,7 +130,7 @@
                 {
                     "name": "",
                     "id": "9e89a3db-ee90-4e89-80c5-a22674da3d8f",
-                    "path": "<Keyboard>/tab",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -207,7 +207,7 @@
                 {
                     "name": "",
                     "id": "e261608b-1a1d-4d68-8ffa-3f08757d7e94",
-                    "path": "<Keyboard>/rightCtrl",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
