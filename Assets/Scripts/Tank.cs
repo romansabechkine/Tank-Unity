@@ -12,7 +12,12 @@ public class Tank : MonoBehaviour
 
     private Rigidbody rb;
 
-    public float speed =10;
+    public float  normalSpeed =13;
+    public float rotationSpeed = 80;
+    public float slowedspeed = 10f;
+    public float slowedrotatespeed = 60;
+    public float currentSpeed;
+    public float currentRotationSpeed;
     public InputActionReference verticalMovement;
     public InputActionReference rotationMovement;
     public InputActionReference fireAction;
@@ -38,7 +43,9 @@ public class Tank : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
-    }
+        currentSpeed = normalSpeed;
+        currentRotationSpeed = rotationSpeed;
+        }
 
     // Update is called once per frame
 
@@ -46,12 +53,12 @@ public class Tank : MonoBehaviour
     void Update()
     {
         Vector3 movement = this.transform.position;
-        movement += this.transform.forward * speed * verticalMovement.action.ReadValue<float>() * Time.deltaTime;
+        movement += this.transform.forward * currentSpeed * verticalMovement.action.ReadValue<float>() * Time.deltaTime;
         rb.MovePosition(movement);
 
         Quaternion initialRotation = this.transform.rotation;
         //Set the angular velocity of the Rigidbody (rotating around the Y axis, 100 deg/sec)
-        m_EulerAngleVelocity = new Vector3(0, 300, 0);
+        m_EulerAngleVelocity = new Vector3(0, currentRotationSpeed, 0);
         Quaternion deltaRotation = Quaternion.Euler(rotationMovement.action.ReadValue<float>() * Time.deltaTime * m_EulerAngleVelocity);
         rb.MoveRotation( initialRotation * deltaRotation);
        if (fireAction.action.triggered && Time.time > nextFire)
@@ -95,4 +102,24 @@ public class Tank : MonoBehaviour
             Destroy(smoke);
         }
     }
-}
+
+    private void OnTriggerEnter(Collider other)
+        {
+        if (other.gameObject.CompareTag("Finish"))
+            {
+            print("Triggered");
+            currentSpeed = slowedspeed; // Réduit la vitesse
+            currentRotationSpeed = slowedrotatespeed; // Réduit la vitesse de rotation
+            }
+        }
+
+    private void OnTriggerExit(Collider other)
+        {
+        if (other.gameObject.CompareTag("Finish"))
+            {
+            
+            currentSpeed = normalSpeed; // Rétablit la vitesse;
+            currentRotationSpeed = rotationSpeed; // Rétablit la vitesse de rotation;
+            }
+        }
+    }

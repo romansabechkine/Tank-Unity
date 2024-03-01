@@ -124,7 +124,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
+    width: 0.5
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -356,7 +356,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679f81c3349d646cd95270348382b1ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
+  normalSpeed: 13
+  rotationSpeed: 80
+  slowedspeed: 10
+  slowedrotatespeed: 60
+  currentSpeed: 0
+  currentRotationSpeed: 0
   verticalMovement: {fileID: -1822573157380670274, guid: 50263a2e129fc4e1fb69a41d959a7f15, type: 3}
   rotationMovement: {fileID: 3379107773071744333, guid: 50263a2e129fc4e1fb69a41d959a7f15, type: 3}
   fireAction: {fileID: -7672685944724184017, guid: 50263a2e129fc4e1fb69a41d959a7f15, type: 3}

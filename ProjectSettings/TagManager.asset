@@ -7,6 +7,7 @@ TagManager:
   - Tank1
   - Wall
   - Object
+  - Slowing
   layers:
   - Default
   - TransparentFX
