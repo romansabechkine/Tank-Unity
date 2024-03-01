@@ -5,6 +5,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Tank : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class Tank : MonoBehaviour
     public float speed =10;
     public InputActionReference verticalMovement;
     public InputActionReference rotationMovement;
-
     public InputActionReference fireAction;
     public GameObject bulletPrefab;
     public GameObject bulletSpawnPoint;
@@ -51,7 +51,7 @@ public class Tank : MonoBehaviour
 
         Quaternion initialRotation = this.transform.rotation;
         //Set the angular velocity of the Rigidbody (rotating around the Y axis, 100 deg/sec)
-        m_EulerAngleVelocity = new Vector3(0, 1000, 0);
+        m_EulerAngleVelocity = new Vector3(0, 300, 0);
         Quaternion deltaRotation = Quaternion.Euler(rotationMovement.action.ReadValue<float>() * Time.deltaTime * m_EulerAngleVelocity);
         rb.MoveRotation( initialRotation * deltaRotation);
        if (fireAction.action.triggered && Time.time > nextFire)
@@ -63,9 +63,15 @@ public class Tank : MonoBehaviour
         {
             GameObject explosion2 =  Instantiate(explosionPrefab2, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);
-            Destroy(explosion2, .5f);
+            Destroy(explosion2, .2f);
         }
         Smoke();
+
+
+       if (health <= 0)
+            {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         
         }
     GameObject flame;

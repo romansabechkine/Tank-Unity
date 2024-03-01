@@ -11365,7 +11365,7 @@ GameObject:
   - component: {fileID: 2150959771452601593}
   m_Layer: 0
   m_Name: fence1
-  m_TagString: Object
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15444,7 +15444,7 @@ GameObject:
   - component: {fileID: 4804891191606014328}
   m_Layer: 0
   m_Name: fence1 (1)
-  m_TagString: Object
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -7,7 +7,7 @@ using UnityEngine;
 public class Shell : MonoBehaviour
 {
     public float speed = 10;
-    public float lifeTime = 2;
+    public float lifeTime = 4;
     public float damage = 1;
     // Start is called before the first frame update
 
@@ -24,6 +24,13 @@ public class Shell : MonoBehaviour
     void Update()
     {
         this.transform.position += this.transform.forward * speed * Time.deltaTime;
+        lifeTime -= Time.deltaTime;
+        if (lifeTime <= 0)
+            {
+            Destroy(this.gameObject);
+            GameObject explosion = Instantiate(explosionPrefab, this.transform.position, this.transform.rotation);
+            Destroy(explosion, 1.0f);
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
