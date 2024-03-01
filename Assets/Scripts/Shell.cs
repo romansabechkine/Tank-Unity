@@ -25,5 +25,13 @@ public class Shell : MonoBehaviour
             collision.gameObject.GetComponent<Tank>().health -= damage;
             Destroy(this.gameObject);
             }
+        if (collision.gameObject.tag == "Object")
+            {
+            Destroy(this.gameObject);
+            }
+        if (collision.gameObject.tag == "Wall")
+            {
+            Destroy(this.gameObject);
+            }
     }   
 }
